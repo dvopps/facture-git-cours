@@ -20,9 +20,11 @@ public class Facture {
     }
 
     private static int calculerTotal(int sousTotal) {
-        int total = sousTotal + calculerFraisLivraison(sousTotal) - RABAIS_FIDELITE;
-        return total;
+        int totalAvantRabais = sousTotal + calculerFraisLivraison(sousTotal);
+		int totalApresRabais = totalAvantRabais - RABAIS_FIDELITE;
+        return totalApresRabais;
     }
+
 
     private static int calculerFraisLivraison(int sousTotal) {
         if (sousTotal >= SEUIL_LIVRAISON_GRATUITE) {
