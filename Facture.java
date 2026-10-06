@@ -20,14 +20,9 @@ public class Facture {
     }
 
     private static int calculerTotal(int sousTotal) {
-        int x = sousTotal + calculerFraisLivraison(sousTotal);
-        System.out.println("DEBUG x = " + x);
-        if (sousTotal > 100) {
-            x = x - 15;
-        } else {
-            x = x - RABAIS_FIDELITE;
-        }
-        return x;
+        int totalAvantRabais = sousTotal + calculerFraisLivraison(sousTotal);
+		int totalApresRabais = totalAvantRabais - RABAIS_FIDELITE;
+        return totalApresRabais;
     }
 
 
