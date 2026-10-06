@@ -14,13 +14,13 @@ public class Facture {
         System.out.println("Total : " + total + " $");
 		System.out.println("----------");
         // client 2 (copie du client 1)
-        String c2 = "Client fidèle";
-        int q2 = 6;
-        int st2 = PRIX_UNITAIRE * q2;
-        int t = st2 + FRAIS_LIVRAISON - RABAIS_FIDELITE;
-        System.out.println("Client : " + c2);
-        System.out.println(q2 + " article(s) à " + PRIX_UNITAIRE + " $");
-        System.out.println("Sous-total : " + st2 + " $");
-        System.out.println("Total : " + t + " $");
+        String client2 = "Client fidèle";
+        int quantite2 = 6;
+        int sousTotal2 = PRIX_UNITAIRE * quantite2;
+        int total2 = sousTotal2 + FRAIS_LIVRAISON - RABAIS_FIDELITE;
+        System.out.println("Client : " + client2);
+        System.out.println(quantite2 + " article(s) à " + PRIX_UNITAIRE + " $");
+        System.out.println("Sous-total : " + sousTotal2 + " $");
+        System.out.println("Total : " + total2 + " $");
     }
 }
