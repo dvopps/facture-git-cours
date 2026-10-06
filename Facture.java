@@ -8,7 +8,6 @@ public class Facture {
         affciherFacture("Client démonstration", 3);
 		System.out.println("----------");
         affciherFacture("Client fidèle", 6);
-		// afficherFacture("Client test", 1);
     }
 
     private static void affciherFacture(String client, int quantite) {
