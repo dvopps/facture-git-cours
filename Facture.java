@@ -10,11 +10,25 @@ public class Facture {
     }
 
     private static void affciherFacture(String client, int quantite) {
-        int sousTotal = PRIX_UNITAIRE * quantite;
-        int total = sousTotal + FRAIS_LIVRAISON - RABAIS_FIDELITE;
+        int sousTotal = calculerSousTotal(quantite);
+        int total = calculerTotal(sousTotal);
         System.out.println("Client : " + client);
 		System.out.println(quantite + " article(s) à " + PRIX_UNITAIRE + " $");
 		System.out.println("Sous-total : " + sousTotal + " $");
         System.out.println("Total : " + total + " $");
+    }
+
+    private static int calculerTotal(int sousTotal) {
+        int total = sousTotal + calculerFraisLivraison() - RABAIS_FIDELITE;
+        return total;
+    }
+
+    private static int calculerFraisLivraison() {
+        return FRAIS_LIVRAISON;
+    }
+
+    private static int calculerSousTotal(int quantite) {
+        int sousTotal = PRIX_UNITAIRE * quantite;
+        return sousTotal;
     }
 }
