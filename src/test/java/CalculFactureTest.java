@@ -1,4 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -34,4 +36,12 @@ class CalculFactureTest {
     void livraisonGratuiteAPartirDuSeuil(int sousTotal, int fraisAttendus) {
         assertEquals(fraisAttendus, CalculFacture.calculerFraisLivraison(sousTotal));
     }
+
+    @Test
+    @DisplayName("Une quantité nulle est refusée")
+    void quantiteNulleEstRefusee() {
+        assertThrows(IllegalArgumentException.class,
+                () -> CalculFacture.calculerSousTotal(0));
+    }
+
 }
