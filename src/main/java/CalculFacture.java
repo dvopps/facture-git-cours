@@ -18,7 +18,9 @@ public class CalculFacture {
     }
 
     static int calculerSousTotal(int quantite) {
-        int sousTotal = PRIX_UNITAIRE * quantite;
-        return sousTotal;
+        if (quantite < 1) {
+            throw new IllegalArgumentException("La quantité doit être d'au moins 1");
+        }
+        return PRIX_UNITAIRE * quantite;
     }    
 }
