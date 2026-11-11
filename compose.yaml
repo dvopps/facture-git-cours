@@ -1,0 +1,18 @@
+services:
+  site:
+    image: nginx:1.29-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+
+  facture:
+    build: .
+    image: facture:1.0
+    env_file:
+      - .env
+    environment:
+      APP_ENV: test
+      COMPTA_URL: http://site/factures
+    depends_on:
+      - site
